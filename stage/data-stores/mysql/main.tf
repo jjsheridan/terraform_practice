@@ -1,13 +1,12 @@
+variable "db_password" {}
+
 provider "aws" {
-    region = "us-west-2"
+    region = "${var.region}"
   }
 
-resource "aws_db_instance" "mysqldb" {
-    engine		= "mysql"
-    allocated_storage	= 10
-    instance_class	= "db.t2.micro"
-    name		= "mysqldb"
-    username		= "admin"
-    password		= "${var.db_password}"
-    skip_final_snapshot  = true
-  }
+data "aws_caller_identity" "current" {}
+
+module "mysql" {
+    source = "../../../modules/data-stores/mysql"
+    db_password = "${var.db_password}"
+}

@@ -1,3 +1,3 @@
-variable "db_password" {
-    description	= "Password for the database"
-  }
+variable "region" {
+  default = "us-west-2"
+}
