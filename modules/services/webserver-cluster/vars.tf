@@ -28,7 +28,7 @@ variable "enable_autoscaling" {
   description = "If set to true, enable auto scaling"
 }
 
-variable "ami" {
+variable "ami-id" {
   description = "The AMI to run in the cluster"
 }
 

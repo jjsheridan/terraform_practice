@@ -21,7 +21,7 @@ data "template_file" "user_data" {
 }
 
 resource "aws_launch_configuration" "alc" {
-    image_id         = "${var.ami}"
+    image_id         = "${var.ami-id}"
     instance_type    = "${var.instance_type}"
     key_name         = "mykey"
     security_groups  = ["${aws_security_group.ec2_sg.id}"]
