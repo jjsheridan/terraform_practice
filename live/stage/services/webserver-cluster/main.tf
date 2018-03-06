@@ -1,6 +1,7 @@
 provider "aws" {
     region = "${var.region}"
 }
+variable "ami" {}
 
 data "aws_caller_identity" "current" {}
 
