@@ -7,8 +7,8 @@ data "aws_caller_identity" "current" {}
 module "webserver-cluster" {
     source = "git::https://github.com/jjsheridan/terraform_practice_modules.git//services/webserver-cluster?ref=v0.0.1"
 
-  #  ami                     = "ami-a9d276c9"
-  #  server_text             = "Hello, World"
+    ami                     = "ami-a9d276c9"
+    server_text             = "Hello, World"
 
     cluster_name            = "${var.cluster_name}"
     db_remote_state_bucket  = "tfstate-${data.aws_caller_identity.current.account_id}-${var.region}"
@@ -18,5 +18,5 @@ module "webserver-cluster" {
     instance_type           = "t2.micro"
     min_size                = 2
     max_size                = 2
-#    enable_autoscaling      = false
+    enable_autoscaling      = false
 }
