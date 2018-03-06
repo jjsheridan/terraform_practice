@@ -26,12 +26,10 @@ variable "max_size" {
 
 variable "enable_autoscaling" {
   description = "If set to true, enable auto scaling"
-  default = "true"
 }
 
 variable "ami" {
   description = "The AMI to run in the cluster"
-  default     = "ami-a9d276c9"
 }
 
 variable  "server_text" {
