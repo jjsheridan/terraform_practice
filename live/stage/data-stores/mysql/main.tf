@@ -7,6 +7,6 @@ provider "aws" {
 data "aws_caller_identity" "current" {}
 
 module "mysql" {
-    source = "../../../modules/data-stores/mysql"
+    source = "git::https://github.com/jjsheridan/terraform_practice_modules.git//data-stores/mysql/"
     db_password = "${var.db_password}"
 }
