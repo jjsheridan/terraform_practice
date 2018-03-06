@@ -6,7 +6,6 @@ data "aws_caller_identity" "current" {}
 
 module "webserver-cluster" {
     source = "git::https://github.com/jjsheridan/terraform_practice_modules.git//services/webserver-cluster?ref=v0.0.1"
-
     ami                     = "ami-a9d276c9"
     server_text             = "Hello, World"
 
