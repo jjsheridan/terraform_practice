@@ -32,6 +32,6 @@ variable "ami" {
   description = "The AMI to run in the cluster"
 }
 
-variable  "server_text" {
+variable  "server_words" {
   description = "The text the web server should return"
 }
