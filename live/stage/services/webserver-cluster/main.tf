@@ -5,7 +5,7 @@ provider "aws" {
 data "aws_caller_identity" "current" {}
 
 module "webserver-cluster" {
-    source = "../../../../modules/services/webserver-cluster"
+    source                  = "../../../../modules/services/webserver-cluster"
     ami-id                  = "ami-a9d276c9"
     server_text             = "Hello, World"
     cluster_name            = "${var.cluster_name}"
